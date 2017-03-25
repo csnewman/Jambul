@@ -1,0 +1,8 @@
+packages
+.idea
+.vs
+*.user
+Jambul/bin
+Jambul/obj
+Tests/bin
+Tests/obj

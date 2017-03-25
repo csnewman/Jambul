@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D987D454-5662-4707-95D9-8BE64FC81405}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Jambul</RootNamespace>
+    <AssemblyName>Jambul</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Jambul.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr4.Runtime.Standard, Version=4.6.0.0, Culture=neutral, PublicKeyToken=e78b2c5abd1fcb3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr4.Runtime.Standard.4.6.0\lib\net35\Antlr4.Runtime.Standard.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CSharp\IR\ArrayType.cs" />
+    <Compile Include="CSharp\IR\InbuiltType.cs" />
+    <Compile Include="CSharp\IR\IType.cs" />
+    <Compile Include="CSharp\IR\IUsingStatement.cs" />
+    <Compile Include="CSharp\IR\MethodName.cs" />
+    <Compile Include="CSharp\IR\Modifiers.cs" />
+    <Compile Include="CSharp\IR\NamedType.cs" />
+    <Compile Include="CSharp\IR\NamespaceContext.cs" />
+    <Compile Include="CSharp\IR\NullableType.cs" />
+    <Compile Include="CSharp\IR\PointerType.cs" />
+    <Compile Include="CSharp\IR\TypeName.cs" />
+    <Compile Include="CSharp\IR\UsingNamespace.cs" />
+    <Compile Include="CSharp\Parser\Antlr\AutoGen\CSharpLexer.cs" />
+    <Compile Include="CSharp\Parser\Antlr\AutoGen\CSharpParser.cs" />
+    <Compile Include="CSharp\Parser\Antlr\AutoGen\CSharpParserBaseVisitor.cs" />
+    <Compile Include="CSharp\Parser\Antlr\AutoGen\CSharpParserVisitor.cs" />
+    <Compile Include="CSharp\Parser\Antlr\AutoGen\CSharpPreprocessorParser.cs" />
+    <Compile Include="CSharp\Parser\Antlr\CSharpAntlrParser.cs" />
+    <Compile Include="CSharp\Parser\Antlr\MiscExtensions.cs" />
+    <Compile Include="CSharp\Parser\Antlr\ModifierExtensions.cs" />
+    <Compile Include="CSharp\Parser\Antlr\NamespaceExtensions.cs" />
+    <Compile Include="CSharp\Parser\Antlr\TypeDeclarationExtensions.cs" />
+    <Compile Include="CSharp\Parser\Antlr\TypeExtensions.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
